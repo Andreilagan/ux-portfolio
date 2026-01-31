@@ -8,6 +8,7 @@ export interface Project {
   role: string;
   year: string;
   logo: string;
+  buttonText?: string;
 }
 
 interface KeyItemsProps {
@@ -19,11 +20,12 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     {
       id: '1',
       title: 'Educo Solutions',
-      description: 'Learning management platform redesign focusing on student engagement',
+      description: 'Educo enables global companies to hire, manage, and scale world class teams with absolute compliance and efficiency.',
       metrics: ['140% inquiry increase', '45% task completion improvement', '3.2x user retention'],
-      role: 'Lead UX Designer',
-      year: '2024',
+      role: 'UI/UX Design Intern',
+      year: '2025',
       logo: '/logo-educo.jpg',
+      buttonText: 'Visit website',
     },
     {
       id: '2',
