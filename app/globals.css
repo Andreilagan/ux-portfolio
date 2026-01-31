@@ -86,10 +86,7 @@
     @apply outline-ring/50;
   }
   body {
-    background-image: url('/background-landscape.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background: linear-gradient(135deg, #0a1628 0%, #132a4a 50%, #0d1f38 100%);
     color: #ffffff;
   }
   
