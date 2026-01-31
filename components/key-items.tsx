@@ -8,7 +8,6 @@ export interface Project {
   role: string;
   year: string;
   logo: string;
-  image: string;
 }
 
 interface KeyItemsProps {
@@ -25,7 +24,6 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'Lead UX Designer',
       year: '2024',
       logo: '/logo-educo.jpg',
-      image: '/placeholder.jpg',
     },
     {
       id: '2',
@@ -35,7 +33,6 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'UX Lead',
       year: '2023',
       logo: '/logo-greatwork.jpg',
-      image: '/placeholder.jpg',
     },
     {
       id: '3',
@@ -45,7 +42,6 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'Senior UX Designer',
       year: '2023',
       logo: '/logo-prime.jpg',
-      image: '/placeholder.jpg',
     },
     {
       id: '4',
@@ -55,7 +51,6 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'Design Lead',
       year: '2022',
       logo: '/logo-pixel8.jpg',
-      image: '/placeholder.jpg',
     },
   ];
 
@@ -74,43 +69,28 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
           <button
             key={project.id}
             onClick={() => onProjectSelect(project)}
-            className="jrpg-container overflow-hidden text-left hover:border-cyan-300 hover:bg-cyan-900/30 transition-all group cursor-pointer flex flex-col"
+            className="jrpg-container p-4 text-left hover:border-cyan-300 hover:bg-cyan-900/30 transition-all group cursor-pointer"
           >
-            {/* Project Image */}
-            {project.image && (
-              <div className="mb-3 border-b-2 border-white -m-4 mb-3 p-4 pb-3">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-32 object-cover"
-                  style={{ imageRendering: 'pixelated' }}
-                />
-              </div>
-            )}
-
-            {/* Content */}
-            <div className="p-4 pt-0 flex flex-col flex-1">
-              <div className="flex items-start gap-3 mb-2">
-                <img
-                  src={project.logo || "/placeholder.svg"}
-                  alt={`${project.title} logo`}
-                  className="w-10 h-10 flex-shrink-0 border border-white"
-                  style={{ imageRendering: 'pixelated' }}
-                />
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xs md:text-sm font-bold text-yellow-300 group-hover:text-cyan-300">
-                      {project.title}
-                    </h3>
-                    <span className="text-xs text-lime-300">{project.year}</span>
-                  </div>
-                  <p className="text-xs text-gray-200 mb-2 line-clamp-2">
-                    {project.description}
-                  </p>
+            <div className="flex items-start gap-3 mb-2">
+              <img
+                src={project.logo || "/placeholder.svg"}
+                alt={`${project.title} logo`}
+                className="w-12 h-12 flex-shrink-0 border border-white"
+                style={{ imageRendering: 'pixelated' }}
+              />
+              <div className="flex-1">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xs md:text-sm font-bold text-yellow-300 group-hover:text-cyan-300">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs text-lime-300">{project.year}</span>
                 </div>
-              </div>
-              <div className="text-xs text-cyan-300 group-hover:text-lime-300 mt-auto">
-                {'[ ENTER TO VIEW ]'}
+                <p className="text-xs text-gray-200 mb-2 line-clamp-2">
+                  {project.description}
+                </p>
+                <div className="text-xs text-cyan-300 group-hover:text-lime-300">
+                  {'[ ENTER TO VIEW ]'}
+                </div>
               </div>
             </div>
           </button>

@@ -24,18 +24,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </button>
         </div>
 
-        {/* Project Image */}
-        {project.image && (
-          <div className="mb-4 border-2 border-white">
-            <img
-              src={project.image || "/placeholder.svg"}
-              alt={project.title}
-              className="w-full h-auto"
-              style={{ imageRendering: 'pixelated' }}
-            />
-          </div>
-        )}
-
         {/* Project Title and Year */}
         <div className="mb-4">
           <h3 className="text-sm md:text-lg font-bold text-yellow-300 mb-2">
