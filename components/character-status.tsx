@@ -22,26 +22,27 @@ export function CharacterStatus() {
         </div>
 
         {/* Character Info */}
-        <div className="space-y-2 text-xs md:text-sm">
-          <div className="border-t border-white pt-2">
+        <div className="space-y-2 text-xs">
+          {/* Basic Info */}
+          <div className="border-t border-white pt-2 space-y-1">
             <div className="text-white">
-              <span className="inline-block w-20">NAME:</span>
-              <span className="text-yellow-300">Zyreel</span>
+              <span className="inline-block w-16">NAME:</span>
+              <span className="text-yellow-300 break-words">Zyreel Andre L. Ilagan</span>
             </div>
-            <div className="text-white text-xs md:text-sm mt-1">
-              <span className="inline-block w-20">JOB:</span>
+            <div className="text-white">
+              <span className="inline-block w-16">JOB:</span>
               <span className="text-cyan-300">UX Designer</span>
             </div>
           </div>
 
-          {/* Level and EXP */}
+          {/* Level */}
           <div className="border-t border-white pt-2">
-            <div className="flex justify-between text-white">
+            <div className="text-white">
               <span>LV 21</span>
-              <span className="text-lime-300">2026</span>
+              <span className="text-lime-300 ml-2 text-xs">(Feb 2026)</span>
             </div>
             <div className="mt-2">
-              <div className="text-xs mb-1">EXP</div>
+              <div className="text-xs mb-1">GRADUATION EXP</div>
               <div className="w-full h-3 border-2 border-white bg-black">
                 <div
                   className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
@@ -51,19 +52,25 @@ export function CharacterStatus() {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="border-t border-white pt-2 space-y-1 text-xs">
-            <div className="flex justify-between">
-              <span>ATK:</span>
-              <span className="text-red-300">92</span>
+          {/* Availability */}
+          <div className="border-t border-white pt-2 space-y-1">
+            <div className="text-white">
+              <span className="inline-block w-16">HP:</span>
+              <span className="text-lime-300">100%</span>
             </div>
-            <div className="flex justify-between">
-              <span>DEF:</span>
-              <span className="text-green-300">88</span>
+            <div className="text-xs text-gray-200 ml-16 -mt-1">
+              Manila / Remote
             </div>
-            <div className="flex justify-between">
-              <span>SPD:</span>
-              <span className="text-yellow-300">85</span>
+          </div>
+
+          {/* Education */}
+          <div className="border-t border-white pt-2">
+            <div className="text-white text-xs font-bold mb-1">ORIGIN:</div>
+            <div className="text-xs text-gray-200 space-y-1">
+              <div>BS Computer Science</div>
+              <div className="text-cyan-300">Major: Software Technology</div>
+              <div className="text-cyan-300">Minor: Game Design</div>
+              <div className="text-yellow-300">De La Salle University</div>
             </div>
           </div>
         </div>
