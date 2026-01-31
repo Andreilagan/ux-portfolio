@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: linear-gradient(135deg, #0a1b3f 0%, #1a3a5c 50%, #0f2844 100%);
+  --background: transparent;
   --foreground: #ffffff;
   --card: rgba(26, 58, 92, 0.95);
   --card-foreground: #ffffff;
