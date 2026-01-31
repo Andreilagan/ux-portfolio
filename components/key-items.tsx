@@ -32,7 +32,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       metrics: ['89% feature adoption', '2.5x time-on-site increase', '92% satisfaction score'],
       role: 'UX Lead',
       year: '2023',
-      logo: '/logo-greatwork.jpg',
+      logo: '/logo-greatwork.png',
     },
     {
       id: '3',
