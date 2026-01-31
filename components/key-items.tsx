@@ -25,7 +25,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'UI/UX Design Intern',
       year: '2025',
       logo: '/logo-educo.jpg',
-      buttonText: 'Visit website',
+      buttonText: 'VISIT WEBSITE',
     },
     {
       id: '2',
