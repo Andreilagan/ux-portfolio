@@ -93,11 +93,28 @@
     color: #ffffff;
   }
   
-  /* Double border effect for JRPG containers */
+  /* Double border effect for JRPG containers with pixel corners and bevel */
   .jrpg-container {
     border: 2px solid #ffffff;
-    box-shadow: inset 0 0 0 2px #ffffff;
+    box-shadow: 
+      /* Outer bevel highlight */
+      inset 1px 1px 0 #c0c0c0,
+      /* Outer bevel shadow */
+      inset -1px -1px 0 #808080,
+      /* Inner double border */
+      inset 0 0 0 2px #ffffff;
     background-color: rgba(26, 58, 92, 0.85);
+    /* Pixel-perfect corners */
+    clip-path: polygon(
+      2px 0,
+      calc(100% - 2px) 0,
+      100% 2px,
+      100% calc(100% - 2px),
+      calc(100% - 2px) 100%,
+      2px 100%,
+      0 calc(100% - 2px),
+      0 2px
+    );
   }
   
   /* Pixel-perfect text rendering */
