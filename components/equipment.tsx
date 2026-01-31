@@ -4,7 +4,7 @@ export function Equipment() {
   const tools = [
     { name: 'Figma', icon: '/figma-logo.png', color: 'text-purple-400', isImage: true },
     { name: 'Wix Studio', icon: '/wix-studio-logo.png', color: 'text-gray-300', isImage: true },
-    { name: 'Adobe XD', icon: '★', color: 'text-red-400' },
+    { name: 'Adobe Photoshop', icon: '/adobe-photoshop-logo.png', color: 'text-blue-400', isImage: true },
     { name: 'Webflow', icon: '◈', color: 'text-blue-400' },
     { name: 'VS Code', icon: '◇', color: 'text-cyan-400' },
     { name: 'Git', icon: '◉', color: 'text-orange-400' },
