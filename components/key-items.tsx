@@ -36,11 +36,11 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     },
     {
       id: '3',
-      title: 'PRIME CRM',
-      description: 'Enterprise CRM system with focus on sales team efficiency',
-      metrics: ['120% conversion increase', '75% process automation', '4.8/5 usability rating'],
-      role: 'Senior UX Designer',
-      year: '2023',
+      title: 'PRIME Philippines',
+      description: 'Real Estate Consultancy Website Redesign',
+      metrics: ['2 Responsive designs', '120% conversion increase', '4.8/5 usability rating'],
+      role: 'UI/UX Design Intern',
+      year: '2025',
       logo: '/logo-prime.jpg',
     },
     {
