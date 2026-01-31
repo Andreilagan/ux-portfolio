@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen pt-4 px-4 md:px-8" style={{ backgroundImage: 'linear-gradient(135deg, #0a1b3f 0%, #1a3a5c 50%, #0f2844 100%)' }}>
+    <main className="min-h-screen pt-4 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Flex Layout */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-6">
