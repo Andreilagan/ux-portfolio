@@ -91,7 +91,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
                   {project.description}
                 </p>
                 <div className="text-xs text-cyan-300 group-hover:text-lime-300">
-                  {'[ ENTER TO VIEW ]'}
+                  {'[ CLICK FOR DETAILS ]'}
                 </div>
               </div>
             </div>
