@@ -2,7 +2,7 @@
 
 export function Equipment() {
   const tools = [
-    { name: 'Figma', icon: '◆', color: 'text-purple-400' },
+    { name: 'Figma', icon: '/figma-logo.png', color: 'text-purple-400', isImage: true },
     { name: 'Framer', icon: '▭', color: 'text-pink-400' },
     { name: 'Adobe XD', icon: '★', color: 'text-red-400' },
     { name: 'Webflow', icon: '◈', color: 'text-blue-400' },
@@ -26,8 +26,19 @@ export function Equipment() {
             key={idx}
             className="jrpg-container p-3 text-center hover:bg-cyan-900/50 transition-colors cursor-pointer group"
           >
-            <div className={`text-2xl md:text-3xl mb-2 ${tool.color} group-hover:animate-pulse`}>
-              {tool.icon}
+            <div className="mb-2 flex justify-center">
+              {tool.isImage ? (
+                <img
+                  src={tool.icon || "/placeholder.svg"}
+                  alt={`${tool.name} logo`}
+                  className="w-8 h-8 md:w-10 md:h-10 group-hover:opacity-75 transition-opacity"
+                  style={{ imageRendering: 'pixelated' }}
+                />
+              ) : (
+                <div className={`text-2xl md:text-3xl ${tool.color} group-hover:animate-pulse`}>
+                  {tool.icon}
+                </div>
+              )}
             </div>
             <div className="text-xs font-bold">{tool.name}</div>
           </div>
