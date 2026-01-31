@@ -95,6 +95,7 @@
   
   /* Double border effect for JRPG containers with pixel corners and bevel */
   .jrpg-container {
+    position: relative;
     border: 2px solid #ffffff;
     box-shadow: 
       /* Outer bevel highlight */
@@ -115,6 +116,31 @@
       0 calc(100% - 2px),
       0 2px
     );
+  }
+
+  /* Corner flourish decorations */
+  .jrpg-container::before {
+    content: '◆ ◆ ◆ ◆';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: #4a9fd8;
+    letter-spacing: 4px;
+    opacity: 0.6;
+  }
+
+  .jrpg-container::after {
+    content: '◆ ◆ ◆ ◆';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: #4a9fd8;
+    letter-spacing: 4px;
+    opacity: 0.6;
   }
   
   /* Pixel-perfect text rendering */
