@@ -2,9 +2,9 @@
 
 export function AbilityList() {
   const abilities = {
-    Research: ['User Research', 'Competitive Analysis', 'Usability Testing', 'Data Interpretation'],
+    Research: ['User Research', 'Competitive Analysis', 'Usability Testing', 'User Interviews'],
     Design: ['Wireframing', 'Prototyping', 'Visual Design', 'Design Systems'],
-    CRO: ['Conversion Optimization', 'A/B Testing', 'Analytics Review', 'User Journey Mapping'],
+    Optimization: ['Conversion Rate Optimization', 'Google Analytics', 'Search Engine Optimization', 'Information Architecture'],
   };
 
   return (
