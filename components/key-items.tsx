@@ -8,6 +8,7 @@ export interface Project {
   role: string;
   year: string;
   logo: string;
+  image: string;
 }
 
 interface KeyItemsProps {
@@ -24,6 +25,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'Lead UX Designer',
       year: '2024',
       logo: '/logo-educo.jpg',
+      image: '/placeholder.jpg',
     },
     {
       id: '2',
@@ -33,6 +35,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'UX Lead',
       year: '2023',
       logo: '/logo-greatwork.jpg',
+      image: '/placeholder.jpg',
     },
     {
       id: '3',
@@ -42,6 +45,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'Senior UX Designer',
       year: '2023',
       logo: '/logo-prime.jpg',
+      image: '/placeholder.jpg',
     },
     {
       id: '4',
@@ -51,6 +55,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       role: 'Design Lead',
       year: '2022',
       logo: '/logo-pixel8.jpg',
+      image: '/placeholder.jpg',
     },
   ];
 
