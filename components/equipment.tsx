@@ -13,7 +13,7 @@ export function Equipment() {
   return (
     <div className="jrpg-container p-4 md:p-6 text-white">
       {/* Title */}
-      <div className="border-b-2 border-white mb-4 pb-2">
+      <div className="jrpg-header mb-4">
         <h2 className="text-xs md:text-sm font-bold tracking-wider">
           {'< EQUIPMENT >'}
         </h2>
