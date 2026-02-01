@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { VT323 } from 'next/font/google'
+import { VT323, Press_Start_2P } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -10,7 +10,11 @@ const vt323 = VT323({
   display: 'swap',
 });
 
-const pressStart2P = { className: 'press-start-2p' }; // Declare the variable here
+const pressStart2P = Press_Start_2P({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Zyreel Andre L. Ilagan - UX Designer Portfolio',
@@ -48,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={pressStart2P.className}>
       <body className={`${vt323.className} antialiased`} style={{ fontSize: '0.75rem' }}>
         {children}
         <Analytics />

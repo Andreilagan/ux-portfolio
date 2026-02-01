@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -85,12 +85,29 @@
   * {
     @apply outline-ring/50;
   }
+  
+  /* Reset body to VT323 - headers will override */
   body {
     background-image: url('/background-landscape.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     color: #ffffff;
+    font-family: 'VT323', sans-serif;
+  }
+  
+  /* Header-specific styling with Press Start 2P and enhanced contrast */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffd43b;
+    text-shadow: 2px 2px 0 #4a9fd8, 4px 4px 0 rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+  }
+  
+  .jrpg-header h2 {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffd43b;
+    text-shadow: 2px 2px 0 #4a9fd8, 4px 4px 0 rgba(0, 0, 0, 0.5);
   }
   
   /* Double border effect for JRPG containers with pixel corners and bevel */
@@ -147,45 +164,5 @@
   .pixel-text {
     font-family: 'VT323', sans-serif;
     image-rendering: pixelated;
-  }
-
-  /* JRPG Tab Header Styles */
-  .jrpg-header {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .jrpg-header::before {
-    content: '▶';
-    position: absolute;
-    left: -16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffd43b;
-    font-size: 0.75rem;
-    animation: blink 0.6s infinite;
-  }
-
-  .jrpg-header h2 {
-    position: relative;
-    padding: 6px 12px;
-    background: linear-gradient(to bottom, rgba(74, 159, 216, 0.3), rgba(42, 74, 122, 0.5));
-    border-top: 1px solid #4a9fd8;
-    border-bottom: 2px solid #ffffff;
-    border-left: 1px solid #4a9fd8;
-    border-right: 1px solid #4a9fd8;
-    box-shadow: 
-      inset 0 1px 0 rgba(192, 192, 192, 0.4),
-      inset 0 -1px 0 rgba(128, 128, 128, 0.4);
-  }
-
-  @keyframes blink {
-    0%, 49%, 100% {
-      opacity: 1;
-    }
-    50%, 99% {
-      opacity: 0;
-    }
   }
 }
