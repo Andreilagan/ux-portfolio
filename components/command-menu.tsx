@@ -22,23 +22,22 @@ export function CommandMenu() {
         {/* Command Buttons */}
         <div className="grid grid-cols-3 gap-2 md:gap-4">
           <button
-            onClick={() => alert('Quest started! Let\'s collaborate on your next project.')}
+            onClick={() => alert('Opening LinkedIn profile...')}
             className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800"
           >
-            START<br className="md:hidden" />
-            QUEST
+            LINKEDIN
           </button>
           <button
-            onClick={() => alert('Character Status: Active and ready!')}
+            onClick={() => alert('Opening Resume...')}
             className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800"
           >
-            STATUS
+            RESUME
           </button>
           <button
             onClick={handleContactClick}
             className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800"
           >
-            SAVE
+            EMAIL
           </button>
         </div>
       </div>

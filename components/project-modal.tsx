@@ -72,7 +72,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             }}
             className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-lime-300 hover:bg-lime-900/30 transition-all"
           >
-            LEARN MORE
+            {project.buttonText || 'VIEW PROTOTYPE'}
           </button>
           <button
             onClick={onClose}

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: linear-gradient(135deg, #0a1b3f 0%, #1a3a5c 50%, #0f2844 100%);
+  --background: transparent;
   --foreground: #ffffff;
   --card: rgba(26, 58, 92, 0.95);
   --card-foreground: #ffffff;
@@ -93,11 +93,54 @@
     color: #ffffff;
   }
   
-  /* Double border effect for JRPG containers */
+  /* Double border effect for JRPG containers with pixel corners and bevel */
   .jrpg-container {
+    position: relative;
     border: 2px solid #ffffff;
-    box-shadow: inset 0 0 0 2px #ffffff;
+    box-shadow: 
+      /* Outer bevel highlight */
+      inset 1px 1px 0 #c0c0c0,
+      /* Outer bevel shadow */
+      inset -1px -1px 0 #808080,
+      /* Inner double border */
+      inset 0 0 0 2px #ffffff;
     background-color: rgba(26, 58, 92, 0.85);
+    /* Pixel-perfect corners */
+    clip-path: polygon(
+      2px 0,
+      calc(100% - 2px) 0,
+      100% 2px,
+      100% calc(100% - 2px),
+      calc(100% - 2px) 100%,
+      2px 100%,
+      0 calc(100% - 2px),
+      0 2px
+    );
+  }
+
+  /* Corner flourish decorations */
+  .jrpg-container::before {
+    content: '◆ ◆ ◆ ◆';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: #4a9fd8;
+    letter-spacing: 4px;
+    opacity: 0.6;
+  }
+
+  .jrpg-container::after {
+    content: '◆ ◆ ◆ ◆';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: #4a9fd8;
+    letter-spacing: 4px;
+    opacity: 0.6;
   }
   
   /* Pixel-perfect text rendering */

@@ -1,20 +1,28 @@
 'use client';
 
 export function QuestLog() {
-  const experience = [
+  const quests = [
     {
+      type: 'MAIN',
       company: 'PRIME Philippines',
-      role: 'UX Designer',
-      period: '2023 - Present',
-      achievements: ['Led 15+ projects', 'Mentored 3 junior designers', 'Increased conversion by 140%'],
+      objective: 'Lead end-to-end UI/UX for 3 web projects.',
+      achievements: [
+        'Case Study on PRIME Philippines Website',
+        'Increased client inquiries by 140% for Educo Solutions.',
+        'Reduced average clicks to key content by 50% for GreatWork.',
+      ],
     },
     {
-      company: 'Pixel8',
-      role: 'Product Designer',
-      period: '2021 - 2023',
-      achievements: ['Built design system', 'Scaled team from 1 to 5 designers', 'Reached 250K+ users'],
+      type: 'SIDE',
+      company: 'Pixel8 Web Solutions',
+      objective: 'Serve as Interim Design Lead & build a comprehensive Design System.',
+      achievements: [
+        'Coordinated weekly UX-to-Dev handoffs for team alignment.',
+      ],
     },
   ];
+
+  const experience = quests; // Declare the experience variable
 
   return (
     <div className="jrpg-container p-4 md:p-6 text-white">
@@ -25,26 +33,40 @@ export function QuestLog() {
         </h2>
       </div>
 
-      {/* Experience Entries */}
-      <div className="space-y-4">
-        {experience.map((exp, idx) => (
+      {/* Quest Entries */}
+      <div className="space-y-6">
+        {quests.map((quest, idx) => (
           <div
             key={idx}
             className="border-l-4 border-cyan-400 pl-3 py-2"
           >
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xs md:text-sm font-bold text-yellow-300">
-                {exp.company}
-              </h3>
-              <span className="text-xs text-lime-300">{exp.period}</span>
+            {/* Quest Type Badge */}
+            <div className="flex items-center gap-2 mb-2">
+              <span className={`text-xs font-bold px-2 py-1 ${
+                quest.type === 'MAIN'
+                  ? 'bg-yellow-600/50 text-yellow-300 border border-yellow-400'
+                  : 'bg-cyan-600/50 text-cyan-300 border border-cyan-400'
+              }`}>
+                {'[ ' + quest.type + ' QUEST ]'}
+              </span>
             </div>
+
+            {/* Company/Quest Name */}
+            <h3 className="text-xs md:text-sm font-bold text-yellow-300 mb-1">
+              {quest.company}
+            </h3>
+
+            {/* Objective */}
             <div className="text-xs text-cyan-300 mb-2">
-              ◆ {exp.role}
+              {'> OBJECTIVE: '} <span className="text-lime-300">{quest.objective}</span>
             </div>
-            <ul className="text-xs text-gray-200 space-y-1">
-              {exp.achievements.map((achievement, aidx) => (
-                <li key={aidx}>
-                  {'→ '} {achievement}
+
+            {/* Achievements */}
+            <ul className="text-xs text-gray-200 space-y-1 ml-2">
+              {quest.achievements.map((achievement, aidx) => (
+                <li key={aidx} className="flex gap-2">
+                  <span className="text-lime-300 flex-shrink-0">✓</span>
+                  <span>{achievement}</span>
                 </li>
               ))}
             </ul>

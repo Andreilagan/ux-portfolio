@@ -8,6 +8,7 @@ export interface Project {
   role: string;
   year: string;
   logo: string;
+  buttonText?: string;
 }
 
 interface KeyItemsProps {
@@ -19,11 +20,12 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     {
       id: '1',
       title: 'Educo Solutions',
-      description: 'Learning management platform redesign focusing on student engagement',
+      description: 'Educo enables global companies to hire, manage, and scale world class teams with absolute compliance and efficiency.',
       metrics: ['140% inquiry increase', '45% task completion improvement', '3.2x user retention'],
-      role: 'Lead UX Designer',
-      year: '2024',
+      role: 'UI/UX Design Intern',
+      year: '2025',
       logo: '/logo-educo.jpg',
+      buttonText: 'VISIT WEBSITE',
     },
     {
       id: '2',
@@ -36,11 +38,11 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     },
     {
       id: '3',
-      title: 'PRIME CRM',
-      description: 'Enterprise CRM system with focus on sales team efficiency',
-      metrics: ['120% conversion increase', '75% process automation', '4.8/5 usability rating'],
-      role: 'Senior UX Designer',
-      year: '2023',
+      title: 'PRIME Philippines',
+      description: 'Real Estate Consultancy Website Redesign',
+      metrics: ['2 Responsive designs', '120% conversion increase', '4.8/5 usability rating'],
+      role: 'UI/UX Design Intern',
+      year: '2025',
       logo: '/logo-prime.jpg',
     },
     {
@@ -89,7 +91,7 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
                   {project.description}
                 </p>
                 <div className="text-xs text-cyan-300 group-hover:text-lime-300">
-                  {'[ ENTER TO VIEW ]'}
+                  {'[ CLICK FOR DETAILS ]'}
                 </div>
               </div>
             </div>
