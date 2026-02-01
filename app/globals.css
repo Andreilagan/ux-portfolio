@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -85,29 +85,12 @@
   * {
     @apply outline-ring/50;
   }
-  
-  /* Reset body to VT323 - headers will override */
   body {
     background-image: url('/background-landscape.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     color: #ffffff;
-    font-family: 'VT323', sans-serif;
-  }
-  
-  /* Header-specific styling with Press Start 2P and enhanced contrast */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Press Start 2P', sans-serif;
-    color: #ffd43b;
-    text-shadow: 2px 2px 0 #4a9fd8, 4px 4px 0 rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
-  }
-  
-  .jrpg-header h2 {
-    font-family: 'Press Start 2P', sans-serif;
-    color: #ffd43b;
-    text-shadow: 2px 2px 0 #4a9fd8, 4px 4px 0 rgba(0, 0, 0, 0.5);
   }
   
   /* Double border effect for JRPG containers with pixel corners and bevel */

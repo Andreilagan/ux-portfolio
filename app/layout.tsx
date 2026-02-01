@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={pressStart2P.className}>
+    <html lang="en">
       <body className={`${vt323.className} antialiased`} style={{ fontSize: '0.75rem' }}>
         {children}
         <Analytics />
