@@ -37,11 +37,11 @@ export function GalleryModal({ title, images, onClose }: GalleryModalProps) {
 
         {/* Image Gallery */}
         <div className="mb-4">
-          <div className="relative w-full bg-gray-900 rounded-sm overflow-hidden mb-4 max-h-96">
+          <div className="relative w-full bg-gray-900 rounded-sm overflow-hidden mb-4">
             <img
               src={images[currentIndex]}
               alt={`Gallery image ${currentIndex + 1}`}
-              className="w-full h-full object-contain"
+              className="w-4/5 h-auto object-contain mx-auto"
               style={{ imageRendering: 'pixelated' }}
             />
           </div>
