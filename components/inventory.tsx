@@ -1,5 +1,8 @@
 'use client';
 
+import { useState } from 'react';
+import { GalleryModal } from './gallery-modal';
+
 export interface InventoryItem {
   id: string;
   title: string;
@@ -7,6 +10,7 @@ export interface InventoryItem {
   image: string;
   category: string;
   year: string;
+  galleryImages?: string[];
 }
 
 interface InventoryProps {
@@ -14,7 +18,27 @@ interface InventoryProps {
 }
 
 export function Inventory({ onItemSelect }: InventoryProps) {
+  const [selectedGallery, setSelectedGallery] = useState<{ title: string; images: string[] } | null>(null);
+
   const items: InventoryItem[] = [
+    {
+      id: '0',
+      title: "Pokémon GO's Needfinding Study",
+      description: 'UX research and needfinding study on location-based AR games and safety concerns',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide17.JPG-4GbK7MJeGPuDtTX2R6oEJLeMFFJui7.jpeg',
+      category: 'UX Research',
+      year: '2024',
+      galleryImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide3.JPG-oj81SwBNBrsw73djsKtjLGTDkovq2r.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide4.JPG-r35jbUPuULbRKPi4AQo7uB2JtqbE3F.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide5.JPG-OguajfchgUA41UXifY8pX7Q0ui56K5.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide13.JPG-YIVfKuh66Ix851D6Rm2TqfHwk3Sc37.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide15.JPG-dEMdhD4aya1HFvhxJ3Aq85DkITttnL.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide17.JPG-4GbK7MJeGPuDtTX2R6oEJLeMFFJui7.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide18.JPG-tJT2z2AGQPTWjECqygD6uLQ6P9x8d4.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide21.JPG-gYCTKwCsjatxP1mvjP2jJjAusDICT9.jpeg',
+      ],
+    },
     {
       id: '1',
       title: 'Mobile App Design',
@@ -63,7 +87,13 @@ export function Inventory({ onItemSelect }: InventoryProps) {
         {items.map((item) => (
           <button
             key={item.id}
-            onClick={() => onItemSelect?.(item)}
+            onClick={() => {
+              if (item.galleryImages) {
+                setSelectedGallery({ title: item.title, images: item.galleryImages });
+              } else {
+                onItemSelect?.(item);
+              }
+            }}
             className="jrpg-container p-0 overflow-hidden hover:border-cyan-300 transition-all group cursor-pointer"
           >
             {/* Image Section - Larger than Key Items */}
@@ -98,6 +128,15 @@ export function Inventory({ onItemSelect }: InventoryProps) {
           </button>
         ))}
       </div>
+
+      {/* Gallery Modal */}
+      {selectedGallery && (
+        <GalleryModal
+          title={selectedGallery.title}
+          images={selectedGallery.images}
+          onClose={() => setSelectedGallery(null)}
+        />
+      )}
     </div>
   );
 }
