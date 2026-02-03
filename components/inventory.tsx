@@ -34,6 +34,11 @@ export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide17.JPG-4GbK7MJeGPuDtTX2R6oEJLeMFFJui7.jpeg',
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide18.JPG-tJT2z2AGQPTWjECqygD6uLQ6P9x8d4.jpeg',
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide21.JPG-gYCTKwCsjatxP1mvjP2jJjAusDICT9.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide24.JPG-lTeKMgesb6WZO32JcLofqTs3h6mgch.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide25.JPG-RwVZQNT9pzByWaM4WVT51RsSwcUDcx.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide26.JPG-d8ot6OGp3BdcgvQzg3iBwTZ39kjHUj.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide27.JPG-jMlzdkafIZzwM2Au2RrjMWcnqgIOTk.jpeg',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide%2028-9JZSmAQS8BgVFfjX5nBDEj5qLMe9bi.png',
       ],
     },
     {
