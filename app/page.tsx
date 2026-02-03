@@ -9,9 +9,11 @@ import { QuestLog } from '@/components/quest-log';
 import { Inventory } from '@/components/inventory';
 import { CommandMenu } from '@/components/command-menu';
 import { ProjectModal } from '@/components/project-modal';
+import { GalleryModal } from '@/components/gallery-modal';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedGallery, setSelectedGallery] = useState<{ title: string; images: string[] } | null>(null);
   const [showCommandMenu, setShowCommandMenu] = useState(false);
   const inventoryRef = useRef<HTMLDivElement>(null);
 
@@ -47,7 +49,7 @@ export default function Home() {
             <KeyItems onProjectSelect={setSelectedProject} />
             <QuestLog />
             <div ref={inventoryRef}>
-              <Inventory />
+              <Inventory onGallerySelect={setSelectedGallery} />
             </div>
             {/* Command Menu - Shows below Inventory on scroll */}
             {showCommandMenu && <CommandMenu />}
@@ -60,6 +62,15 @@ export default function Home() {
         <ProjectModal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
+        />
+      )}
+
+      {/* Gallery Modal */}
+      {selectedGallery && (
+        <GalleryModal
+          title={selectedGallery.title}
+          images={selectedGallery.images}
+          onClose={() => setSelectedGallery(null)}
         />
       )}
     </main>

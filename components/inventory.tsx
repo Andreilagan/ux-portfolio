@@ -1,8 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import { GalleryModal } from './gallery-modal';
-
 export interface InventoryItem {
   id: string;
   title: string;
@@ -15,17 +12,17 @@ export interface InventoryItem {
 
 interface InventoryProps {
   onItemSelect?: (item: InventoryItem) => void;
+  onGallerySelect?: (gallery: { title: string; images: string[] }) => void;
 }
 
-export function Inventory({ onItemSelect }: InventoryProps) {
-  const [selectedGallery, setSelectedGallery] = useState<{ title: string; images: string[] } | null>(null);
+export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
 
   const items: InventoryItem[] = [
     {
       id: '0',
       title: "Pokémon GO's Needfinding Study",
       description: 'UX research and needfinding study on location-based AR games and safety concerns',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide17.JPG-4GbK7MJeGPuDtTX2R6oEJLeMFFJui7.jpeg',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide1.JPG-QBUoDiQPWOTaLsshbHZwxMJT2zeCEl.jpeg',
       category: 'UX Research',
       year: '2024',
       galleryImages: [
@@ -89,7 +86,7 @@ export function Inventory({ onItemSelect }: InventoryProps) {
             key={item.id}
             onClick={() => {
               if (item.galleryImages) {
-                setSelectedGallery({ title: item.title, images: item.galleryImages });
+                onGallerySelect?.({ title: item.title, images: item.galleryImages });
               } else {
                 onItemSelect?.(item);
               }
@@ -128,15 +125,6 @@ export function Inventory({ onItemSelect }: InventoryProps) {
           </button>
         ))}
       </div>
-
-      {/* Gallery Modal */}
-      {selectedGallery && (
-        <GalleryModal
-          title={selectedGallery.title}
-          images={selectedGallery.images}
-          onClose={() => setSelectedGallery(null)}
-        />
-      )}
     </div>
   );
 }
