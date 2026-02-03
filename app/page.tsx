@@ -6,6 +6,7 @@ import { AbilityList } from '@/components/ability-list';
 import { Equipment } from '@/components/equipment';
 import { KeyItems } from '@/components/key-items';
 import { QuestLog } from '@/components/quest-log';
+import { Inventory } from '@/components/inventory';
 import { CommandMenu } from '@/components/command-menu';
 import { ProjectModal } from '@/components/project-modal';
 
@@ -47,7 +48,8 @@ export default function Home() {
             <div ref={questLogRef}>
               <QuestLog />
             </div>
-            {/* Command Menu - Shows below Quest Log on scroll */}
+            <Inventory />
+            {/* Command Menu - Shows below Inventory on scroll */}
             {showCommandMenu && <CommandMenu />}
           </div>
         </div>
