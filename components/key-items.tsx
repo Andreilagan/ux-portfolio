@@ -43,8 +43,8 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     {
       id: '3',
       title: 'PRIME Philippines',
-      description: 'Real Estate Consultancy Website Redesign',
-      metrics: ['2 Responsive designs', '120% conversion increase', '4.8/5 usability rating'],
+      description: 'PRIME Landing Page Redesign: Optimized content hierarchy through card sorting with 6 users and A/B testing of 2 layout variations, improving user engagement and clarity',
+      metrics: ['SEM Analysis', '2 Responsive designs', '4.8/5 usability rating'],
       role: 'UI/UX Design Intern',
       year: '2025',
       logo: '/logo-prime.jpg',
