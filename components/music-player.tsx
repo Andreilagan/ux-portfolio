@@ -69,36 +69,39 @@ export function MusicPlayer() {
         crossOrigin="anonymous"
       />
 
-      {/* Progress Bar */}
-      <div className="mb-2">
-        <input
-          type="range"
-          min="0"
-          max={duration || 0}
-          value={currentTime}
-          onChange={handleSeek}
-          className="w-full h-2 bg-black border border-white cursor-pointer"
-          style={{
-            background: `linear-gradient(to right, #4a9fd8 0%, #4a9fd8 ${
-              duration ? (currentTime / duration) * 100 : 0
-            }%, #000 ${duration ? (currentTime / duration) * 100 : 0}%, #000 100%)`
-          }}
-        />
+      {/* Progress Bar with Play Button */}
+      <div className="mb-2 flex gap-2 items-end">
+        {/* Play Button */}
+        <button
+          onClick={togglePlay}
+          className="jrpg-container px-3 py-2 text-xs font-bold text-white hover:border-lime-300 hover:bg-lime-900/30 transition-all whitespace-nowrap"
+        >
+          {isPlaying ? '⏸' : '▶'}
+        </button>
+
+        {/* Progress Bar */}
+        <div className="flex-1">
+          <input
+            type="range"
+            min="0"
+            max={duration || 0}
+            value={currentTime}
+            onChange={handleSeek}
+            className="w-full h-2 bg-black border border-white cursor-pointer"
+            style={{
+              background: `linear-gradient(to right, #4a9fd8 0%, #4a9fd8 ${
+                duration ? (currentTime / duration) * 100 : 0
+              }%, #000 ${duration ? (currentTime / duration) * 100 : 0}%, #000 100%)`
+            }}
+          />
+        </div>
       </div>
 
       {/* Time Display */}
-      <div className="text-xs text-gray-300 mb-2 flex justify-between">
+      <div className="text-xs text-gray-300 flex justify-between">
         <span>{formatTime(currentTime)}</span>
         <span>{formatTime(duration)}</span>
       </div>
-
-      {/* Play Button */}
-      <button
-        onClick={togglePlay}
-        className="w-full jrpg-container px-3 py-2 text-xs font-bold text-white hover:border-lime-300 hover:bg-lime-900/30 transition-all"
-      >
-        {isPlaying ? '⏸ PAUSE' : '▶ PLAY'}
-      </button>
     </div>
   );
 }
