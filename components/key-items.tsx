@@ -51,9 +51,9 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
       id: '4',
       title: 'Pixel8 Web Solutions & Consultancy Inc.',
       description: 'Served as interim design lead for cross-functional team, facilitating daily stand-ups and coordinating weekly UX-to-development handoffs to ensure design vision alignment',
-      metrics: ['40+ design components', '8M monthly interactions'],
+      metrics: ['40+ design components', 'Team Leader'],
       role: 'Design Lead',
-      year: '2022',
+      year: '2024',
       logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pxArt%20%288%29-mH5TW3eZpAn6AK0aGPJ7zCHmyY7UFY.png',
     },
   ];
@@ -84,10 +84,10 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
               />
               <div className="flex-1">
                 <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xs md:text-sm font-bold text-yellow-300 group-hover:text-cyan-300">
+                  <h3 className="text-xs md:text-sm font-bold text-yellow-300 group-hover:text-cyan-300 line-clamp-1">
                     {project.title}
                   </h3>
-                  <span className="text-xs text-lime-300">{project.year}</span>
+                  <span className="text-xs text-lime-300 ml-2 flex-shrink-0">{project.year}</span>
                 </div>
                 <p className="text-xs text-gray-200 mb-2 line-clamp-2">
                   {project.description}
