@@ -49,12 +49,12 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     },
     {
       id: '4',
-      title: 'Pixel8 Hub',
-      description: 'Community platform for creative professionals',
-      metrics: ['250K+ active users', '8M monthly interactions', '4.9 app store rating'],
+      title: 'Pixel8 Web Solutions & Consultancy Inc.',
+      description: 'Served as interim design lead for cross-functional team, facilitating daily stand-ups and coordinating weekly UX-to-development handoffs to ensure design vision alignment',
+      metrics: ['40+ design components', '8M monthly interactions'],
       role: 'Design Lead',
       year: '2022',
-      logo: '/logo-pixel8.jpg',
+      logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pxArt%20%288%29-mH5TW3eZpAn6AK0aGPJ7zCHmyY7UFY.png',
     },
   ];
 
