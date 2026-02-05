@@ -6,13 +6,16 @@ import { AbilityList } from '@/components/ability-list';
 import { Equipment } from '@/components/equipment';
 import { KeyItems } from '@/components/key-items';
 import { QuestLog } from '@/components/quest-log';
+import { Inventory } from '@/components/inventory';
 import { CommandMenu } from '@/components/command-menu';
 import { ProjectModal } from '@/components/project-modal';
+import { GalleryModal } from '@/components/gallery-modal';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedGallery, setSelectedGallery] = useState<{ title: string; images: string[]; prototypeLink?: string } | null>(null);
   const [showCommandMenu, setShowCommandMenu] = useState(false);
-  const questLogRef = useRef<HTMLDivElement>(null);
+  const inventoryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,8 +25,8 @@ export default function Home() {
       { threshold: 0.1 }
     );
 
-    if (questLogRef.current) {
-      observer.observe(questLogRef.current);
+    if (inventoryRef.current) {
+      observer.observe(inventoryRef.current);
     }
 
     return () => observer.disconnect();
@@ -44,10 +47,11 @@ export default function Home() {
             <AbilityList />
             <Equipment />
             <KeyItems onProjectSelect={setSelectedProject} />
-            <div ref={questLogRef}>
-              <QuestLog />
+            <QuestLog />
+            <div ref={inventoryRef}>
+              <Inventory onGallerySelect={setSelectedGallery} />
             </div>
-            {/* Command Menu - Shows below Quest Log on scroll */}
+            {/* Command Menu - Shows below Inventory on scroll */}
             {showCommandMenu && <CommandMenu />}
           </div>
         </div>
@@ -58,6 +62,16 @@ export default function Home() {
         <ProjectModal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
+        />
+      )}
+
+      {/* Gallery Modal */}
+      {selectedGallery && (
+        <GalleryModal
+          title={selectedGallery.title}
+          images={selectedGallery.images}
+          prototypeLink={selectedGallery.prototypeLink}
+          onClose={() => setSelectedGallery(null)}
         />
       )}
     </main>

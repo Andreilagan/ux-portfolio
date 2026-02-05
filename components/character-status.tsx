@@ -1,5 +1,7 @@
 'use client';
 
+import { MusicPlayer } from './music-player';
+
 export function CharacterStatus() {
   return (
     <div className="sticky top-4 z-30 h-fit w-full md:w-64">
@@ -35,23 +37,6 @@ export function CharacterStatus() {
             </div>
           </div>
 
-          {/* Level */}
-          <div className="border-t border-white pt-2">
-            <div className="text-white">
-              <span>LV 21</span>
-              <span className="text-lime-300 ml-2 text-xs">(Feb 2026)</span>
-            </div>
-            <div className="mt-2">
-              <div className="text-xs mb-1">GRADUATION EXP</div>
-              <div className="w-full h-3 border-2 border-white bg-black">
-                <div
-                  className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
-                  style={{ width: '75%' }}
-                />
-              </div>
-            </div>
-          </div>
-
           {/* Availability */}
           <div className="border-t border-white pt-2 space-y-1">
             <div className="text-white">
@@ -74,6 +59,9 @@ export function CharacterStatus() {
             </div>
           </div>
         </div>
+
+        {/* Music Player */}
+        <MusicPlayer />
       </div>
     </div>
   );

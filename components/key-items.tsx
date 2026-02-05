@@ -9,6 +9,7 @@ export interface Project {
   year: string;
   logo: string;
   buttonText?: string;
+  websiteLink?: string;
 }
 
 interface KeyItemsProps {
@@ -20,39 +21,42 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     {
       id: '1',
       title: 'Educo Solutions',
-      description: 'Educo enables global companies to hire, manage, and scale world class teams with absolute compliance and efficiency.',
+      description: 'Educo Solutions Website Launch: Delivered the brand\'s first digital platform by developing the company\'s landing page that increased client inquiries by 140% (5 to 12 per month) through user engagement optimization',
       metrics: ['140% inquiry increase', '45% task completion improvement', '3.2x user retention'],
       role: 'UI/UX Design Intern',
       year: '2025',
       logo: '/logo-educo.jpg',
       buttonText: 'VISIT WEBSITE',
+      websiteLink: 'https://www.educosolutions.ph/',
     },
     {
       id: '2',
       title: 'GreatWork',
-      description: 'Professional portfolio platform optimizing creator workflows',
-      metrics: ['89% feature adoption', '2.5x time-on-site increase', '92% satisfaction score'],
+      description: 'GreatWork Website Redesign: Implemented CRO strategies by analyzing user behavior and redesigning information architecture based on usage metrics and user feedback, reducing average clicks to key content by 50%',
+      metrics: ['Conversion Rate Optimization', 'Search Engine Optimization', '92% satisfaction score'],
       role: 'UX Lead',
-      year: '2023',
+      year: '2025',
       logo: '/logo-greatwork.jpg',
+      buttonText: 'VISIT WEBSITE',
+      websiteLink: 'https://www.greatworkglobal.com/',
     },
     {
       id: '3',
       title: 'PRIME Philippines',
-      description: 'Real Estate Consultancy Website Redesign',
-      metrics: ['2 Responsive designs', '120% conversion increase', '4.8/5 usability rating'],
+      description: 'PRIME Landing Page Redesign: Optimized content hierarchy through card sorting with 6 users and A/B testing of 2 layout variations, improving user engagement and clarity',
+      metrics: ['SEM Analysis', '2 Responsive designs', '4.8/5 usability rating'],
       role: 'UI/UX Design Intern',
       year: '2025',
       logo: '/logo-prime.jpg',
     },
     {
       id: '4',
-      title: 'Pixel8 Hub',
-      description: 'Community platform for creative professionals',
-      metrics: ['250K+ active users', '8M monthly interactions', '4.9 app store rating'],
+      title: 'Pixel8 Web Solutions & Consultancy Inc.',
+      description: 'Served as interim design lead for cross-functional team, facilitating daily stand-ups and coordinating weekly UX-to-development handoffs to ensure design vision alignment',
+      metrics: ['40+ design components', 'Team Leader'],
       role: 'Design Lead',
-      year: '2022',
-      logo: '/logo-pixel8.jpg',
+      year: '2024',
+      logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pxArt%20%288%29-mH5TW3eZpAn6AK0aGPJ7zCHmyY7UFY.png',
     },
   ];
 
@@ -82,10 +86,10 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
               />
               <div className="flex-1">
                 <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xs md:text-sm font-bold text-yellow-300 group-hover:text-cyan-300">
+                  <h3 className="text-xs md:text-sm font-bold text-yellow-300 group-hover:text-cyan-300 line-clamp-1">
                     {project.title}
                   </h3>
-                  <span className="text-xs text-lime-300">{project.year}</span>
+                  <span className="text-xs text-lime-300 ml-2 flex-shrink-0">{project.year}</span>
                 </div>
                 <p className="text-xs text-gray-200 mb-2 line-clamp-2">
                   {project.description}
