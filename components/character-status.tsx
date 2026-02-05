@@ -1,5 +1,7 @@
 'use client';
 
+import { MusicPlayer } from './music-player';
+
 export function CharacterStatus() {
   return (
     <div className="sticky top-4 z-30 h-fit w-full md:w-64">
@@ -74,6 +76,9 @@ export function CharacterStatus() {
             </div>
           </div>
         </div>
+
+        {/* Music Player */}
+        <MusicPlayer />
       </div>
     </div>
   );
