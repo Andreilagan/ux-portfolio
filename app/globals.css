@@ -118,30 +118,7 @@
     );
   }
 
-  /* Corner flourish decorations */
-  .jrpg-container::before {
-    content: '◆ ◆ ◆ ◆';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.5rem;
-    color: #4a9fd8;
-    letter-spacing: 4px;
-    opacity: 0.6;
-  }
 
-  .jrpg-container::after {
-    content: '◆ ◆ ◆ ◆';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.5rem;
-    color: #4a9fd8;
-    letter-spacing: 4px;
-    opacity: 0.6;
-  }
   
   /* Pixel-perfect text rendering */
   .pixel-text {
