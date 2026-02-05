@@ -44,10 +44,10 @@ export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
     {
       id: '1',
       title: 'RocketBites - Mobile App Design',
-      description: 'Food e-commerce mobile app featuring user research, personas, and case studies',
+      description: 'Food e-commerce user research and responsive website design for mobile and desktop',
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-kFTW8VLQ4lSnS7QhjhoC1Lb8Q73GxE.png',
       category: 'Mobile Design',
-      year: '2024',
+      year: '2025',
       galleryImages: [
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-kFTW8VLQ4lSnS7QhjhoC1Lb8Q73GxE.png',
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-9vPzNriGrWqC3vKbJLlGxvjuMlzPDg.png',
@@ -59,6 +59,11 @@ export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8-H1y3vyqtoEWxxx03984rUuSoujlSx6.png',
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9-P1UW6j8khTLofVerUy2suxUZUGXwLo.png',
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/10-k3za36DNM7yio2ZaumKiq8Fa2yn6IB.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11-TndPZtEy51Yxaji5YnLD1v415mI9us.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/12-PNt3xYAnAsv4545k2DFxtWVf630aUE.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/13-jdDAK7TDepLWEMRmd1Up0MKJdyqOEo.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14-zama2SazYr6AIkBgeKXf5feq9N6lz5.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/15-HVFjBZeUYtjFRbKRpWQqbNTKPQUbEa.png',
       ],
     },
   ];
