@@ -21,12 +21,14 @@ export function CommandMenu() {
 
         {/* Command Buttons */}
         <div className="grid grid-cols-3 gap-2 md:gap-4">
-          <button
-            onClick={() => alert('Opening LinkedIn profile...')}
-            className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800"
+          <a
+            href="https://www.linkedin.com/in/zyreel-andre-ilagan-6255a4277/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800 block text-center"
           >
             LINKEDIN
-          </button>
+          </a>
           <button
             onClick={() => alert('Opening Resume...')}
             className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800"
