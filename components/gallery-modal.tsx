@@ -6,9 +6,10 @@ interface GalleryModalProps {
   title: string;
   images: string[];
   onClose: () => void;
+  prototypeLink?: string;
 }
 
-export function GalleryModal({ title, images, onClose }: GalleryModalProps) {
+export function GalleryModal({ title, images, onClose, prototypeLink }: GalleryModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -83,14 +84,33 @@ export function GalleryModal({ title, images, onClose }: GalleryModalProps) {
           </div>
         </div>
 
-        {/* Close Button */}
-        <div className="border-t border-white pt-4">
-          <button
-            onClick={onClose}
-            className="w-full jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
-          >
-            CLOSE GALLERY
-          </button>
+        {/* Action Button */}
+        <div className="border-t border-white pt-4 flex gap-2">
+          {prototypeLink ? (
+            <>
+              <a
+                href={prototypeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/30 transition-all text-center"
+              >
+                VISIT PROTOTYPE
+              </a>
+              <button
+                onClick={onClose}
+                className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
+              >
+                CLOSE
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={onClose}
+              className="w-full jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
+            >
+              CLOSE GALLERY
+            </button>
+          )}
         </div>
       </div>
     </div>

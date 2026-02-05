@@ -13,7 +13,7 @@ import { GalleryModal } from '@/components/gallery-modal';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
-  const [selectedGallery, setSelectedGallery] = useState<{ title: string; images: string[] } | null>(null);
+  const [selectedGallery, setSelectedGallery] = useState<{ title: string; images: string[]; prototypeLink?: string } | null>(null);
   const [showCommandMenu, setShowCommandMenu] = useState(false);
   const inventoryRef = useRef<HTMLDivElement>(null);
 
@@ -70,6 +70,7 @@ export default function Home() {
         <GalleryModal
           title={selectedGallery.title}
           images={selectedGallery.images}
+          prototypeLink={selectedGallery.prototypeLink}
           onClose={() => setSelectedGallery(null)}
         />
       )}

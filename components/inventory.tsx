@@ -8,11 +8,12 @@ export interface InventoryItem {
   category: string;
   year: string;
   galleryImages?: string[];
+  prototypeLink?: string;
 }
 
 interface InventoryProps {
   onItemSelect?: (item: InventoryItem) => void;
-  onGallerySelect?: (gallery: { title: string; images: string[] }) => void;
+  onGallerySelect?: (gallery: { title: string; images: string[]; prototypeLink?: string }) => void;
 }
 
 export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
@@ -43,11 +44,12 @@ export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
     },
     {
       id: '1',
-      title: 'RocketBites - Mobile App Design',
+      title: 'RocketBites - Responsive Homepage Design',
       description: 'Food e-commerce user research and responsive website design for mobile and desktop',
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-kFTW8VLQ4lSnS7QhjhoC1Lb8Q73GxE.png',
-      category: 'Mobile Design',
+      category: 'Responsive Design',
       year: '2025',
+      prototypeLink: 'https://www.figma.com/design/dTvReMNLZ6pr3hR5qPLrNY/202602_UIUX-Exam-Zyreel-Andre_Ilagan?node-id=54-815&t=dG2KZ2sNkQLoo50a-1',
       galleryImages: [
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-kFTW8VLQ4lSnS7QhjhoC1Lb8Q73GxE.png',
         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-9vPzNriGrWqC3vKbJLlGxvjuMlzPDg.png',
@@ -84,7 +86,7 @@ export function Inventory({ onItemSelect, onGallerySelect }: InventoryProps) {
             key={item.id}
             onClick={() => {
               if (item.galleryImages) {
-                onGallerySelect?.({ title: item.title, images: item.galleryImages });
+                onGallerySelect?.({ title: item.title, images: item.galleryImages, prototypeLink: item.prototypeLink });
               } else {
                 onItemSelect?.(item);
               }
