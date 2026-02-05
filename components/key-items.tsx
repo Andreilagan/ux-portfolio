@@ -32,11 +32,13 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     {
       id: '2',
       title: 'GreatWork',
-      description: 'Professional portfolio platform optimizing creator workflows',
-      metrics: ['89% feature adoption', '2.5x time-on-site increase', '92% satisfaction score'],
+      description: 'GreatWork Website Redesign: Implemented CRO strategies by analyzing user behavior and redesigning information architecture based on usage metrics and user feedback, reducing average clicks to key content by 50%',
+      metrics: ['Conversion Rate Optimization', 'Search Engine Optimization', '92% satisfaction score'],
       role: 'UX Lead',
-      year: '2023',
+      year: '2025',
       logo: '/logo-greatwork.jpg',
+      buttonText: 'VISIT WEBSITE',
+      websiteLink: 'https://www.greatworkglobal.com/',
     },
     {
       id: '3',
