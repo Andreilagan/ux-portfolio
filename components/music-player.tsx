@@ -23,12 +23,19 @@ export function MusicPlayer() {
 
     audio.addEventListener('timeupdate', updateTime);
     audio.addEventListener('loadedmetadata', updateDuration);
-    audio.addEventListener('ended', () => setIsPlaying(false));
+    audio.addEventListener('ended', () => {
+      // Auto loop - restart from beginning
+      audio.currentTime = 0;
+      audio.play();
+    });
 
     return () => {
       audio.removeEventListener('timeupdate', updateTime);
       audio.removeEventListener('loadedmetadata', updateDuration);
-      audio.removeEventListener('ended', () => setIsPlaying(false));
+      audio.removeEventListener('ended', () => {
+        audio.currentTime = 0;
+        audio.play();
+      });
     };
   }, []);
 
@@ -62,7 +69,7 @@ export function MusicPlayer() {
 
   return (
     <div className="mt-4 border-t border-white pt-4">
-      <div className="text-white text-xs font-bold mb-2">♪ BGM</div>
+      <div className="text-white text-xs font-bold mb-2">♪ BGM: The Final of The Fantasy by xDeviruchi</div>
       <audio
         ref={audioRef}
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/xDeviruchi%20-%20The%20Final%20of%20The%20Fantasy-bEvb1h71X3QrEm6KL2m0I8bwvGsn8g.wav"
