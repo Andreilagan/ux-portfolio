@@ -9,6 +9,7 @@ export interface Project {
   year: string;
   logo: string;
   buttonText?: string;
+  websiteLink?: string;
 }
 
 interface KeyItemsProps {
@@ -20,12 +21,13 @@ export function KeyItems({ onProjectSelect }: KeyItemsProps) {
     {
       id: '1',
       title: 'Educo Solutions',
-      description: 'Educo enables global companies to hire, manage, and scale world class teams with absolute compliance and efficiency.',
+      description: 'Educo Solutions Website Launch: Delivered the brand\'s first digital platform by developing the company\'s landing page that increased client inquiries by 140% (5 to 12 per month) through user engagement optimization',
       metrics: ['140% inquiry increase', '45% task completion improvement', '3.2x user retention'],
       role: 'UI/UX Design Intern',
       year: '2025',
       logo: '/logo-educo.jpg',
       buttonText: 'VISIT WEBSITE',
+      websiteLink: 'https://www.educosolutions.ph/',
     },
     {
       id: '2',

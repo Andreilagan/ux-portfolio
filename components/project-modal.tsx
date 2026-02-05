@@ -66,20 +66,41 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Action Buttons */}
         <div className="border-t border-white pt-4 flex gap-2">
-          <button
-            onClick={() => {
-              alert(`Interested in ${project.title}? Get in touch through the Save function!`);
-            }}
-            className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-lime-300 hover:bg-lime-900/30 transition-all"
-          >
-            {project.buttonText || 'VIEW PROTOTYPE'}
-          </button>
-          <button
-            onClick={onClose}
-            className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
-          >
-            CLOSE
-          </button>
+          {project.websiteLink ? (
+            <>
+              <a
+                href={project.websiteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-lime-300 hover:bg-lime-900/30 transition-all text-center"
+              >
+                {project.buttonText || 'VISIT WEBSITE'}
+              </a>
+              <button
+                onClick={onClose}
+                className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
+              >
+                CLOSE
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => {
+                  alert(`Interested in ${project.title}? Get in touch through the Save function!`);
+                }}
+                className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-lime-300 hover:bg-lime-900/30 transition-all"
+              >
+                {project.buttonText || 'VIEW PROTOTYPE'}
+              </button>
+              <button
+                onClick={onClose}
+                className="flex-1 jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
+              >
+                CLOSE
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
