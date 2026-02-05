@@ -1,6 +1,10 @@
 'use client';
 
+import { useState } from 'react';
+
 export function CommandMenu() {
+  const [showEmailModal, setShowEmailModal] = useState(false);
+
   return (
     <div className="mt-6">
       <div className="jrpg-container p-4 md:p-6">
@@ -22,20 +26,41 @@ export function CommandMenu() {
             LINKEDIN
           </a>
           <a
-            href="https://blobs.vusercontent.net/blob/Ilagan%20-%20UIUX%20Designer-Nkv7FNR8u1uH7dSvsdgS4IC7DuAnNq.pdf"
-            download
+            href="https://drive.google.com/file/d/1aCrOkiEO2E5RpZzeD0pzYI54pkuLYG7S/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800 block text-center"
           >
             RESUME
           </a>
-          <a
-            href="mailto:zyreelandre.ilagan@gmail.com"
-            className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800 block text-center"
+          <button
+            onClick={() => setShowEmailModal(true)}
+            className="jrpg-container px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-bold text-white hover:border-cyan-300 hover:bg-cyan-900/50 transition-all active:bg-cyan-800 block text-center w-full"
           >
             EMAIL
-          </a>
+          </button>
         </div>
       </div>
+
+      {/* Email Modal */}
+      {showEmailModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="jrpg-container p-6 max-w-sm mx-4">
+            <h3 className="text-white text-xs md:text-sm font-bold mb-4 border-b border-white pb-2">
+              CONTACT
+            </h3>
+            <p className="text-white text-xs mb-4">
+              Contact Email: zyreelandre.ilagan@gmail.com
+            </p>
+            <button
+              onClick={() => setShowEmailModal(false)}
+              className="w-full jrpg-container px-4 py-2 text-xs font-bold text-white hover:border-red-300 hover:bg-red-900/30 transition-all"
+            >
+              CLOSE
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
