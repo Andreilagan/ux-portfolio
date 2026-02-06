@@ -12,21 +12,11 @@ export function MusicPlayer() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Attempt to play with muted attribute for autoplay compatibility
-    const playAttempt = audio.play();
-    
-    if (playAttempt !== undefined) {
-      playAttempt
-        .then(() => {
-          setIsPlaying(true);
-          // Unmute after starting (works in most browsers)
-          audio.muted = false;
-        })
-        .catch(() => {
-          // Autoplay blocked - user interaction required
-          setIsPlaying(false);
-        });
-    }
+    // Auto-play the audio
+    audio.play().catch(() => {
+      // Autoplay may be blocked, user can click play button
+      setIsPlaying(false);
+    });
 
     const updateTime = () => setCurrentTime(audio.currentTime);
     const updateDuration = () => setDuration(audio.duration);
@@ -36,9 +26,7 @@ export function MusicPlayer() {
     audio.addEventListener('ended', () => {
       // Auto-loop: restart from beginning
       audio.currentTime = 0;
-      audio.play().catch(() => {
-        setIsPlaying(false);
-      });
+      audio.play();
     });
 
     return () => {
@@ -92,7 +80,6 @@ export function MusicPlayer() {
           ref={audioRef}
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/xDeviruchi%20-%20The%20Final%20of%20The%20Fantasy-bEvb1h71X3QrEm6KL2m0I8bwvGsn8g.wav"
           crossOrigin="anonymous"
-          muted
         />
 
         {/* Progress Bar with Play Button */}
